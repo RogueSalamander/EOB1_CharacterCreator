@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public abstract class Character : MonoBehaviour
+// INHERITANCE 
+[CreateAssetMenu (menuName = "Character")]
+public class Character : ScriptableObject
 {
     public enum GENDER { Male, Female };
     public enum RACE { Human, Elf, Half_Elf, Dwarf, Gnome, Halfling };
@@ -13,12 +15,18 @@ public abstract class Character : MonoBehaviour
     // private List<string> classNames { get; set; }
     //List<string> classNames = new List<string> { };
 
-    // Changing stats
-    private int _MaxHP { get; set; }
-    private int _CurrentHP { get; set; }
+    // Personal
+    public string characterName = "Default";
 
-    private int _MaxFood { get; set; }
-    private int _CurrentFood { get; set; }
+    //public Ability[] characterAbilities;
+
+    // ENCAPSULATION
+    // Changing stats
+    public int _MaxHP { get; set; } = 10;
+    public int _CurrentHP { get; set; } = 10;
+
+    private int _MaxFood { get; set; } = 100;
+    private int _CurrentFood { get; set; } = 100;
 
     // Character stats
     private int _Strength { get; set; }
@@ -28,24 +36,21 @@ public abstract class Character : MonoBehaviour
     private int _Constitution { get; set; }
     private int _Charisma { get; set; }
 
+    // Max stats
+    //[Range(3.0f, 18.0f)]
+    private int _maxStrength { get; set; }
+    private int _maxDexterity { get; set; }
+    private int _maxIntelligence { get; set; }
+    private int _maxWisdom { get; set; }
+    private int _maxConstitution { get; set; }
+    private int _maxCharisma { get; set; }
+
     // Battle info
     private int _AC { get; set; }
 
     // Spellcaster info
     private bool canUseMagic { get; set; } = false;
     private bool canUsePrayers { get; set; } = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public virtual void LeftHandAttack()
     {

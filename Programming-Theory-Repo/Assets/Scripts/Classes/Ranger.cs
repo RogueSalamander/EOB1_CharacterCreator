@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // INHERITANCE
-public class Fighter : CharacterClass
+public class Ranger : CharacterClass
 {
     // POLYMORPHISM
-    public Fighter ()
+    public Ranger()
     {
-        useableWeapons = new List<string>{ "All" };
+        useableWeapons = new List<string> { "All" };
 
         classHitDice = 10;
 

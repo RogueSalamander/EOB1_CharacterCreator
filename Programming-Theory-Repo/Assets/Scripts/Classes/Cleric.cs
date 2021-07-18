@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // INHERITANCE
-public class Fighter : CharacterClass
+public class Cleric : CharacterClass
 {
     // POLYMORPHISM
-    public Fighter ()
+    public Cleric()
     {
-        useableWeapons = new List<string>{ "All" };
+        useableWeapons = new List<string> { "Mace", "Flail", "Staff", "Sling" };
 
-        classHitDice = 10;
+        classHitDice = 8;
 
-        bowProficiency = true;
+        canUsePrayers = true;
     }
 
     // ABSTRACTION
