@@ -16,7 +16,7 @@ public class CharacterStats : MonoBehaviour
     public CLASS charClass;
     public ALIGNMENT charAlignment;
 
-    public List<string> classNames;
+    public static List<string> classNames;
 
     public Stat damageLeftHand;
     public Stat damageRightHand;
